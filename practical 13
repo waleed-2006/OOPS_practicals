@@ -1,0 +1,12 @@
+# Function to accept valid name
+def get_name():
+    try:
+        name = input("Enter your name: ")
+        if not name.isalpha():
+            # Raise exception if name contains digits or special characters
+            raise ValueError("Name should only contain letters!")
+        print("Valid name entered:", name)
+    except ValueError as ve:
+        print("Error:", ve)
+
+get_name()
