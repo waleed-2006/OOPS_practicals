@@ -1,0 +1,24 @@
+def process_file(fname):
+    with open(fname) as f:
+        lines = f.readlines()
+
+    chars = sum(len(line) for line in lines)
+    words = sum(len(line.split()) for line in lines)
+    print(f"Characters: {chars}, Words: {words}, Lines: {len(lines)}")
+
+    freq = {}
+    for line in lines:
+        for ch in line:
+            freq[ch] = freq.get(ch, 0) + 1
+
+    all_words = [w for line in lines for w in line.split()]
+    print("\nWords in reverse order:")
+    print(' '.join(all_words[::-1]))
+
+    with open('File1', 'w') as f1, open('File2', 'w') as f2:
+        for i, line in enumerate(lines, 1):
+            (f1 if i % 2 == 0 else f2).write(line)
+
+    print("\nCharacter frequencies:")
+    for ch, count in sorted(freq.items()):
+        print(f"'{ch if ch != '\\n' else '\\\\n'}': {count}")
