@@ -1,0 +1,16 @@
+def digit_to_text(d):
+    names = ["ZERO", "ONE", "TWO", "THREE", "FOUR", 
+             "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"]
+    return names[int(d)]
+ch = input("Enter a single character: ")
+if ch.isalpha():
+    print("It is a letter.")
+    if ch.isupper():
+        print("It is uppercase.")
+    else:
+        print("It is lowercase.")
+elif ch.isdigit():
+    print("It is a numeric digit.")
+    print("Digit in words:", digit_to_text(ch))
+else:
+    print("It is a special character.")
