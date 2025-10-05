@@ -1,0 +1,4 @@
+import cmath
+a, b, c = map(float, input("Enter a, b, c: ").split())
+d = cmath.sqrt(b**2 - 4*a*c)
+print(f"Roots: {(-b + d)/(2*a)}, {(-b - d)/(2*a)}")
