@@ -1,0 +1,22 @@
+# Input string
+text = input("Enter a string: ")
+
+# a. Frequency of a character
+ch = input("\na. Enter character to find frequency: ")
+print(f"Frequency of '{ch}' is: {text.count(ch)}")
+
+# b. Replace character
+old = input("\nb. Enter character to replace: ")
+new = input("Enter new character: ")
+replaced = text.replace(old, new)
+print("String after replacement:", replaced)
+
+# c. Remove first occurrence
+rem = input("\nc. Enter character to remove (first occurrence): ")
+first_removed = text.replace(rem, "", 1)
+print("After removing first occurrence:", first_removed)
+
+# d. Remove all occurrences
+rem_all = input("\nd. Enter character to remove (all occurrences): ")
+all_removed = text.replace(rem_all, "")
+print("After removing all occurrences:", all_removed)
